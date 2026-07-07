@@ -32,10 +32,7 @@ All images are public domain reproductions sourced from Wikimedia Commons.
 - Footer image scales in and fades in as it enters the viewport.
 - All motion respects `prefers-reduced-motion: reduce`.
 
-## Notes
 
-- "Museum of Life" hero title uses the **Alex Brush** script font (Google Fonts), matching the flowing script style from the design inspiration.
-- The name "Nuha Hammad" in the top-right of the header uses **Times New Roman**.
 
 ## Viewing locally
 
