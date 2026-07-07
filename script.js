@@ -9,6 +9,30 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
   });
 });
 
+// Mobile nav toggle
+const navToggle = document.querySelector(".nav-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+if (navToggle && navLinks) {
+  const closeMenu = () => {
+    navToggle.classList.remove("is-open");
+    navLinks.classList.remove("is-open");
+    navToggle.setAttribute("aria-expanded", "false");
+  };
+
+  navToggle.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("is-open");
+    navToggle.classList.toggle("is-open", isOpen);
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  navLinks.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 900) closeMenu();
+  });
+}
+
 // "Next Collection" cycles the grid into view with a highlight nudge
 const nextCollection = document.querySelector(".next-collection");
 if (nextCollection) {
